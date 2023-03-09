@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Incident
 from login.models import User
-from .serializers import IncidentsListSerializer, IncidentsCreateSerializer
+from .serializers import IncidentsListSerializer
 
 # Create your views here.
 class IncidentList(APIView):

@@ -36,10 +36,10 @@ class Incident(models.Model):
         id= 'RMG' + str(random.randrange(11111,99999,5)) + str(year)
         return id
 
-    def save(self):
+    def save(self,*args,**kwargs):
         if not self.incident_id:
             self.incident_id = self.idd()
             while Incident.objects.filter(incident_id=self.incident_id).exists():
                 self.incident_id=self.idd()
-        super(Incident,self).save()
+        super().save(*args,**kwargs)
 
